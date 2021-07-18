@@ -3,7 +3,11 @@ import bp from "body-parser";
 import mongoose from "mongoose"
 import _ from "lodash"
 
-const port = 3000
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+
 const app = express()
 
 app.set('view engine', 'ejs');
